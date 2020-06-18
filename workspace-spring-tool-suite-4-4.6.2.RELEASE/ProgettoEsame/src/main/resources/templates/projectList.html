@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>TaskManager</title>
+</head>
+<body>
+	<div th:if="${projects.empty}">
+		<h1>You don't have any Projects!</h1>
+		<h2>
+			Back to <a th:href="@{/home}">Profile Page</a>
+		</h2>
+	</div>
+
+	<div th:unless="${#lists.isEmpty(projects)}">
+
+
+		<h1>Here is the list of your projects:</h1>
+		<table>
+			<tr>
+				<td th:text="id"></td>
+				<td th:text="Name"></td>
+				<td th:text="Description"></td>
+			<tr th:each="project: ${projects}">
+				<td th:text="${project.id}"></td>
+				<td th:text="${project.name}"></td>
+				<td th:text="${project.description}"></td>
+				<td>
+					<form th:action="@{/deleteProject}" th:object="${project}"
+						method="POST">
+						<input type="hidden" name="id" th:value="${project.id}"> <input
+							type="hidden" name="name" th:value="${project.name}"> <input
+							type="hidden" name="description"
+							th:value="${project.description}">
+						<button type="submit">Delete</button>
+					</form>
+
+					<form method="GET" th:action="@{'/updateProject/' + ${project.id}}">
+						<button type="submit" name="submit" value="value">EDIT</button>
+					</form>
+				</td>
+			</tr>
+
+		</table>
+		<h2>
+			Back to <a th:href="@{/home}">Profile Page</a>
+
+		</h2>
+	</div>
+</body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>Update your profile!</h1>
+<h1>Attenzione dopo l'aggiornamento dovrai effettuare di nuovo il login!</h1>
+<form id = "UpdateUserForm"
+      th:action="@{/updateProject}"
+      method="POST">
+
+      
+     	<table>
+        <tr>
+            <td><label for="userNameUpdate">Username</label>
+            <td><input id=userNameInput type="text" th:field="${credentials.userName}" placeholder="USERNAME" required/></td>
+            <td th:if="${#fields.hasErrors('credentials.userName')}" th:errors="${credentials.userName}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="passwordUpdate">Password</label></td>
+            <td><input id="passwordInput" type="password" th:field="${credentials.password}" placeholder="PASSWORD"/></td>
+            <td th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.password}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="firstNameUpdate">First Name</label></td>
+            <td><input id="firstNameInput" type="text" th:field="${loggedUser.firstName}" placeholder="FIRST NAME"/></td>
+            <td th:if="${#fields.hasErrors('loggedUser.firstName')}" th:errors="${loggedUser.firstName}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="lastNameUpdate">Last Name</label></td>
+            <td><input id="lastNameInput" type="text" th:field="${loggedUser.lastName}" placeholder="LAST NAME"/></td>
+            <td th:if="${#fields.hasErrors('loggedUser.lastName')}" th:errors="${loggedUser.lastName}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Apply</button>
+            </td>
+        </tr>
+    </table>
+     <h2>Back to <a th:href="@{/users/me}">Your User Profile</a></h2>
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>Register new project</h1>
+<form id = "registerProjectForm"
+      th:action="@{createProject}"
+      method="POST">
+
+    <table>
+        <tr>
+            <td><label for="NameInput">Name</label>
+            <td><input id=NameInput type="text" th:field="${projectForm.name}" placeholder="NAME" required/></td>
+        </tr>
+        <tr>
+            <td><label for="DescriptionInput">Description</label>
+            <td><input id=DescriptionInput type="text" th:field="${projectForm.description}" placeholder="DESCRIPTION" required/></td>
+        </tr>
+        	<tr>
+            <td>
+                <button type="submit">Register</button>
+            </td>
+        </tr>
+    </table>
+    <h2>Back to <a th:href="@{/home}">Profile Page</a></h2>
+</form>
+</body>
+</html>
