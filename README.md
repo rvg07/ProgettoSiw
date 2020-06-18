@@ -10,7 +10,7 @@
 
 Il sistema consente di gestire:
 * I propri utenti, registrandosi e poi autenticandosi nel sistema.
-* I propri progetti, creandone di nuovi, visualizzarli e cancellarli dalla lista dei progetti.
+* I propri progetti, creandone di nuovi, aggiornali, visualizzarli e cancellarli dalla lista dei progetti.
 * La visualizzazione del profilo degli utenti registrati con la possibilità di aggiornarli.
 
 L’uso del sistema in discussione è descritto principalmente dai seguenti casi d’uso:
@@ -44,7 +44,11 @@ L’Utente registrato usa il Sistema per visualizzare il proprio profilo tramite
 L'Utente registrato usa il Sistema per aggiornare il suo profilo tramite il collegamento ‘Aggiorna Profilo’ presente sulla sua Profile Page(ad es., per modificare la sua username, per modificare la password, per modificare la firtName e la lastName). 
 Una volta aggiornato il profilo è necessario effettuare il LogOut per far si che le modifiche vengano effettuate. 
 
-**Caso d’uso UC6** : Cancellazione dei progetti creati dall'Utente – Attore primario: un Utente registrato.
+**Caso d’uso UC6**: Aggiornare il profilo dell’Utente – Attore primario: un Utente registrato.
+
+L'Utente registrato usa il Sistema per aggiornare i suoi progetti tramite il tasto ‘Edit’ presente sulla sua lista progetti (in My Projects), (ad es., per modificare i nomi, e le descrizioni dei progetti ).
+
+**Caso d’uso UC7** : Cancellazione dei progetti creati dall'Utente – Attore primario: un Utente registrato.
 
 L'Utente registrato usa il Sistema per effettuare la cancellazione dei progetti creati. Il progetto cancellato non sarà più presente dall’elenco dei progetti dell’utente. 
 
