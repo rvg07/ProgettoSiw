@@ -10,7 +10,7 @@
 <h1>Update your profile!</h1>
 <h1>Attenzione dopo l'aggiornamento dovrai effettuare di nuovo il login!</h1>
 <form id = "UpdateUserForm"
-      th:action="@{/updateProject}"
+      th:action="@{/users/update}"
       method="POST">
 
       
@@ -41,7 +41,6 @@
             </td>
         </tr>
     </table>
-     <h2>Back to <a th:href="@{/users/me}">Your User Profile</a></h2>
 </form>
 </body>
 </html>
