@@ -44,7 +44,7 @@ L’Utente registrato usa il Sistema per visualizzare il proprio profilo tramite
 L'Utente registrato usa il Sistema per aggiornare il suo profilo tramite il collegamento ‘Aggiorna Profilo’ presente sulla sua Profile Page(ad es., per modificare la sua username, per modificare la password, per modificare la firtName e la lastName). 
 Una volta aggiornato il profilo è necessario effettuare il LogOut per far si che le modifiche vengano effettuate. 
 
-**Caso d’uso UC6**: Aggiornare il profilo dell’Utente – Attore primario: un Utente registrato.
+**Caso d’uso UC6**: Aggiornare i progetti dell’Utente – Attore primario: un Utente registrato.
 
 L'Utente registrato usa il Sistema per aggiornare i suoi progetti tramite il tasto ‘Edit’ presente sulla sua lista progetti (in My Projects), (ad es., per modificare i nomi, e le descrizioni dei progetti ).
 

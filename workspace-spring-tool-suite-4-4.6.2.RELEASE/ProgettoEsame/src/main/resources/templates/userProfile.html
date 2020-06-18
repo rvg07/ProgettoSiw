@@ -4,6 +4,16 @@
       xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>TaskManager</title>
+    
+    <style>
+table, th, td {
+
+  padding: 6px;
+}
+table {
+  border-spacing: 3px;
+}
+</style>
 </head>
 
 <body>
@@ -33,6 +43,16 @@
             <td>Last Update at:</td>
             <td th:text="${user.lastUpdateTimestamp}">...</td>
         </tr>
+        <tr>
+			<td>
+				<form >
+			
+					
+			<input type="button" value="Go back!" onclick="history.back()">
+			
+			 </form>
+			 </td>
+			 </tr>
     </table>
     <h4><a href="/users/update">Aggiorna Profilo</a></h4>
     <h2>Back to <a th:href="@{/home}">Profile Page</a></h2>

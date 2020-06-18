@@ -4,6 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <title>TaskManager</title>
+<style>
+table, th, td {
+
+  padding: 10px;
+}
+table {
+  border-spacing: 10px;
+}
+</style>
 </head>
 <body>
 	<div th:if="${projects.empty}">
@@ -19,29 +28,30 @@
 		<h1>Here is the list of your projects:</h1>
 		<table>
 			<tr>
-				<td th:text="id"></td>
-				<td th:text="Name"></td>
-				<td th:text="Description"></td>
+				<td th:text="ID"></td>
+				<td th:text="NAME"></td>
+				<td th:text="DESCRIPTION"></td>
+				<td th:text="OPERATION"></td>
 			<tr th:each="project: ${projects}">
 				<td th:text="${project.id}"></td>
 				<td th:text="${project.name}"></td>
 				<td th:text="${project.description}"></td>
 				<td>
+				<form method="GET" th:action="@{'/updateProject/' + ${project.id}}">
+						<button type="submit" name="submit" value="value">EDIT</button>
+					</form>
 					<form th:action="@{/deleteProject}" th:object="${project}"
 						method="POST">
 						<input type="hidden" name="id" th:value="${project.id}"> <input
 							type="hidden" name="name" th:value="${project.name}"> <input
 							type="hidden" name="description"
 							th:value="${project.description}">
-						<button type="submit">Delete</button>
+						<button type="submit" name="submit" value="value">DELETE</button>
 					</form>
-
-					<form method="GET" th:action="@{'/updateProject/' + ${project.id}}">
-						<button type="submit" name="submit" value="value">EDIT</button>
-					</form>
+					
 				</td>
-			</tr>
-
+			</tr>			 
+			 
 		</table>
 		<h2>
 			Back to <a th:href="@{/home}">Profile Page</a>
